@@ -1,0 +1,13 @@
+#ifndef DECLARATIVE_UI_DECLARATIVE_COMPONENT_HPP
+#define DECLARATIVE_UI_DECLARATIVE_COMPONENT_HPP
+
+#include "declarative/declarative_element.hpp"
+
+namespace declarative {
+    class Component : public virtual DeclarativeElement {
+        ~Component() override;
+
+    };
+}
+
+#endif
