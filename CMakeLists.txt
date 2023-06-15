@@ -6,5 +6,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 
 project(declarative_ui)
 
-add_library(declarative_ui src/declarative_ui.cpp)
+file(GLOB src src/*.cpp)
+
+add_library(declarative_ui ${src})
 target_include_directories(declarative_ui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
