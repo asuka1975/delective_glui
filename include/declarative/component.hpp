@@ -6,7 +6,7 @@
 namespace declarative {
     class Component : public virtual DeclarativeElement {
     public:
-        ~Component() override;
+        ~Component() override = default;
         Component() = default;
     };
 }

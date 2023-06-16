@@ -12,7 +12,7 @@
 namespace declarative {
     class Container : public virtual DeclarativeElement {
     public:
-        ~Container() override;
+        ~Container() override = default;
         explicit Container(std::initializer_list<std::variant<Container, Component>> args);
     private:
         std::vector<std::variant<Container, Component>> raw_elements;
