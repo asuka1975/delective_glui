@@ -2,16 +2,34 @@
 #include "declarative/declarative_element.hpp"
 #include <declarative/container.hpp>
 #include <initializer_list>
+#include <iterator>
 #include <variant>
 
 #include "declarative/visitor.hpp"
 
 using namespace declarative;
 
-Container::Container(std::initializer_list<std::variant<Container, Component>> args) : raw_elements(args.begin(), args.end()) {
+Container::Container(const Container& obj) : raw_elements(obj.raw_elements) {
     elements.reserve(raw_elements.size());
     for(auto& elem : raw_elements) {
         elements.emplace_back(std::visit(Visitor{}, elem));
     }
+}
 
+Container& Container::operator=(const Container& obj) {
+    elements.clear();
+    raw_elements = obj.raw_elements;
+
+    elements.reserve(raw_elements.size());
+    for(auto& elem : raw_elements) {
+        elements.emplace_back(std::visit(Visitor{}, elem));
+    }
+    return *this;
+}
+
+Container::Container(std::initializer_list<Element> args) : raw_elements(args.begin(), args.end()) {
+    elements.reserve(raw_elements.size());
+    for(auto& elem : raw_elements) {
+        elements.emplace_back(std::visit(Visitor{}, elem));
+    }
 }

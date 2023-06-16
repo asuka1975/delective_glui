@@ -6,16 +6,23 @@
 
 #include <functional>
 #include <initializer_list>
+#include <utility>
 #include <variant>
 #include <vector>
+#include "declarative/visitor.hpp"
 
 namespace declarative {
     class Container : public virtual DeclarativeElement {
     public:
         ~Container() override = default;
-        explicit Container(std::initializer_list<std::variant<Container, Component>> args);
+        Container(const Container&);
+        Container(Container&&) = default;
+        Container& operator=(const Container&);
+        Container& operator=(Container&&) = default;
+
+        explicit Container(std::initializer_list<Element>);
     private:
-        std::vector<std::variant<Container, Component>> raw_elements;
+        std::vector<Element> raw_elements;
         std::vector<std::reference_wrapper<DeclarativeElement>> elements;
     };
 }
