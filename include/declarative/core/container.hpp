@@ -1,8 +1,8 @@
 #ifndef DECLARATIVE_UI_DECLARATIVE_CONTAINER_HPP
 #define DECLARATIVE_UI_DECLARATIVE_CONTAINER_HPP
 
-#include "declarative/ui/component.hpp"
-#include "declarative/ui/declarative_element.hpp"
+#include "declarative/core/component.hpp"
+#include "declarative/core/declarative_element.hpp"
 
 #include <functional>
 #include <initializer_list>

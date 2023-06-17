@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
-#include "declarative/ui/component.hpp"
-#include "declarative/ui/container.hpp"
+#include "declarative/core/component.hpp"
+#include "declarative/core/container.hpp"
 #include "declarative/style.hpp"
 #include "declarative_ui.hpp"
 

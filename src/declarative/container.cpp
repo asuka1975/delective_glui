@@ -1,6 +1,6 @@
-#include "declarative/ui/component.hpp"
-#include "declarative/ui/declarative_element.hpp"
-#include <declarative/ui/container.hpp>
+#include "declarative/core/component.hpp"
+#include "declarative/core/declarative_element.hpp"
+#include <declarative/core/container.hpp>
 #include <initializer_list>
 #include <iterator>
 #include <variant>
