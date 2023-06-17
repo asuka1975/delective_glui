@@ -27,7 +27,7 @@ Container& Container::operator=(const Container& obj) {
     return *this;
 }
 
-Container::Container(std::initializer_list<Element> args) : raw_elements(args.begin(), args.end()) {
+Container::Container(std::initializer_list<Element> args, Style style) : raw_elements(args.begin(), args.end()) {
     elements.reserve(raw_elements.size());
     for(auto& elem : raw_elements) {
         elements.emplace_back(std::visit(Visitor{}, elem));

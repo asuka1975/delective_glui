@@ -4,5 +4,6 @@
 #include <declarative/declarative_element.hpp>
 #include <declarative/component.hpp>
 #include <declarative/container.hpp>
+#include <declarative/types.hpp>
 
 #endif

@@ -13,7 +13,7 @@ target_include_directories(declarative_ui PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/in
 
 add_executable(declarative_runner main.cpp)
 target_include_directories(declarative_runner PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(declarative_runner PRIVATE declarative_ui)
+target_link_libraries(declarative_runner PRIVATE declarative_ui GL glfw)
 
 
 add_subdirectory(test)

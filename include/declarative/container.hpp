@@ -9,6 +9,7 @@
 #include <utility>
 #include <variant>
 #include <vector>
+#include "declarative/style.hpp"
 #include "declarative/visitor.hpp"
 
 namespace declarative {
@@ -20,7 +21,7 @@ namespace declarative {
         Container& operator=(const Container&);
         Container& operator=(Container&&) = default;
 
-        explicit Container(std::initializer_list<Element>);
+        Container(std::initializer_list<Element>, Style = Style {});
     private:
         std::vector<Element> raw_elements;
         std::vector<std::reference_wrapper<DeclarativeElement>> elements;
