@@ -1,1 +1,1 @@
-#include <declarative/component.hpp>
+#include <declarative/ui/component.hpp>

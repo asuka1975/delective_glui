@@ -1,6 +1,6 @@
 #include "declarative/visitor.hpp"
-#include "declarative/component.hpp"
-#include "declarative/container.hpp"
+#include "declarative/ui/component.hpp"
+#include "declarative/ui/container.hpp"
 
 declarative::DeclarativeElement& declarative::Visitor::operator()(Component& c) {
     return c;

@@ -44,6 +44,4 @@ int main() {
         glfwSwapBuffers(window);
         glfwWaitEvents();
     }
-
-    std::cout << "Hello, world" << std::endl;
 }

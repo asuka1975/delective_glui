@@ -1,7 +1,7 @@
 #ifndef DECLARATIVE_UI_DECLARATIVE_VISITOR_HPP
 #define DECLARATIVE_UI_DECLARATIVE_VISITOR_HPP
 
-#include "declarative/declarative_element.hpp"
+#include "declarative/ui/declarative_element.hpp"
 #include "declarative/types.hpp"
 #include <variant>
 
