@@ -1,11 +1,13 @@
 #include <iostream>
+#include "declarative/core/gui_context.hpp"
 #include "declarative/types.hpp"
 #include "declarative_ui.hpp"
 
 #include <GLFW/glfw3.h>
 #include <stdexcept>
 
-declarative::Element SampleComponent() {
+declarative::Element SampleComponent(declarative::GuiContext& ctx) {
+    auto [value, setValue] = ctx.useState(1);
 
     return declarative::Container {
         {
