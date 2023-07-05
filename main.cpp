@@ -1,4 +1,5 @@
 #include <iostream>
+#include "declarative/core/component.hpp"
 #include "declarative/core/gui_context.hpp"
 #include "declarative/types.hpp"
 #include "declarative_ui.hpp"

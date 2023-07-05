@@ -37,7 +37,7 @@ namespace declarative {
             } else {
                 nextStatesIterator++;
                 prevStatesIterator++;
-                return std::make_pair(*nextStatesIterator, f);
+                return std::make_pair(std::any_cast<T>(*nextStatesIterator), f);
             }
         }
         std::list<std::any> prevStates;
