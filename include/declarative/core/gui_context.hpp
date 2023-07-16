@@ -25,20 +25,19 @@ namespace declarative {
     private:
         template <class T>
         StateDispatchAction<T> _useState(T t) {
-            auto f = [self = this](T t) {
-                *(self->nextStatesIterator) = t;
-            };
-            if(prevStatesIterator == prevStates.end()) {
+            if(std::next(prevStatesIterator) == prevStates.end()) {
                 prevStates.push_back(t);
                 nextStates.push_back(t);
-                prevStatesIterator = prevStates.end();
-                nextStatesIterator = nextStates.end();
-                return std::make_pair(t, f);
+                prevStatesIterator = std::prev(prevStates.end());
+                nextStatesIterator = std::prev(nextStates.end());
             } else {
                 nextStatesIterator++;
                 prevStatesIterator++;
-                return std::make_pair(std::any_cast<T>(*nextStatesIterator), f);
             }
+            auto f = [next=this->nextStatesIterator, prev=this->prevStatesIterator](T t) {
+                *next = t;
+            };
+            return std::make_pair(*prevStatesIterator, f);
         }
         std::list<std::any> prevStates;
         std::list<std::any> nextStates;
