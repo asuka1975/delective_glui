@@ -5,6 +5,12 @@
 #include <iterator>
 #include <variant>
 
+#include "declarative/style.hpp"
 #include "declarative/visitor.hpp"
 
 using namespace declarative;
+
+
+const Style& Component::style() const {
+    return m_style;
+}

@@ -9,7 +9,10 @@ namespace declarative {
     public:
         ~Component() override = default;
         template <class... TArgs>
-        Component(Style = Style {}) {}
+        Component(Style style = Style {}) : m_style(style) {}
+        const Style& style() const override;
+    private:
+        Style m_style;
     };
 }
 

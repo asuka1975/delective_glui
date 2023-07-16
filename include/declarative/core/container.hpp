@@ -50,10 +50,12 @@ namespace declarative {
         Container& operator=(Container&&) = default;
 
         template <class... TArgs>
-        Container(ContainerArgument args, Style = Style {}) : raw_elements(std::move(args.raw_elements)), elements(std::move(args.elements)) {}
+        Container(ContainerArgument args, Style style = Style {}) : raw_elements(std::move(args.raw_elements)), elements(std::move(args.elements)), m_style(style) {}
+        const Style& style() const override;
     private:
         std::vector<Element> raw_elements;
         std::vector<std::reference_wrapper<DeclarativeElement>> elements;
+        Style m_style;
     };
 }
 
